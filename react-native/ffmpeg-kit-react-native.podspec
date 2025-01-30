@@ -72,8 +72,8 @@ Pod::Spec.new do |s|
   s.subspec 'https-gpl-lts' do |ss|
       ss.source_files      = '**/FFmpegKitReactNativeModule.m',
                              '**/FFmpegKitReactNativeModule.h'
-      ss.dependency 'ffmpeg-kit-ios-https-gpl', "6.0.LTS"
-      ss.ios.deployment_target = '10'
+    ss.vendored_frameworks = 'ios/ffmpeg-kit-https-gpl-6.0.LTS/*.framework'
+    ss.ios.deployment_target = '10'
   end
 
   s.subspec 'audio' do |ss|
