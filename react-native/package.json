@@ -9,8 +9,7 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
-    "release": "release-it",
-    "postpack": "mkdir -p android/libs && cp libs/*.aar android/libs/"
+    "release": "release-it"
   },
   "keywords": [
     "react-native",
@@ -19,13 +18,16 @@
     "ffmpeg-kit",
     "ios"
   ],
-  "repository": "https://github.com/arthenica/ffmpeg-kit",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lakston/ffmpeg-kit.git"
+  },
   "author": "ARTHENICA <open-source@arthenica.com> (https://www.arthenica.com)",
   "license": "LGPL-3.0",
   "bugs": {
     "url": "https://github.com/arthenica/ffmpeg-kit/issues"
   },
-  "homepage": "https://github.com/arthenica/ffmpeg-kit",
+  "homepage": "https://github.com/Lakston/ffmpeg-kit",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -104,5 +106,12 @@
     "tabWidth": 2,
     "trailingComma": "es5",
     "useTabs": false
-  }
+  },
+  "files": [
+    "src/",
+    "android/",
+    "ios/",
+    "binaries/",
+    "package.json"
+  ]
 }
