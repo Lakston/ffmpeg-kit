@@ -33,7 +33,7 @@ android {
   compileSdkVersion 33
 
   defaultConfig {
-    minSdkVersion safeExtGet('ffmpegKitPackage', 'https').contains("-lts") ? 16 : 24
+    minSdkVersion safeExtGet('ffmpegKitPackage', 'https-gpl').contains("-lts") ? 16 : 24
     targetSdkVersion 33
     versionCode 602
     versionName "6.0.2"
@@ -58,7 +58,7 @@ repositories {
   google()
 
   flatDir {
-      dirs '../binaries/audio', '../binaries/full', '../binaries/full-gpl', '../binaries/https', '../binaries/https-gpl', '../binaries/min', '../binaries/min-gpl', '../binaries/video'
+      dirs '../binaries/https-gpl'
   }
 
   def found = false
