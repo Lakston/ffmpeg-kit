@@ -57,6 +57,10 @@ repositories {
   mavenCentral()
   google()
 
+  flatDir {
+      dirs '../binaries/audio', '../binaries/full', '../binaries/full-gpl', '../binaries/https', '../binaries/https-gpl', '../binaries/min', '../binaries/min-gpl', '../binaries/video'
+  }
+
   def found = false
   def defaultDir = null
   def androidSourcesName = 'React Native sources'
@@ -125,5 +129,9 @@ repositories {
 
 dependencies {
   api 'com.facebook.react:react-native:+'
-  implementation files('libs/ffmpeg-kit-https-gpl-6.0-2.LTS.aar')
+  
+  def variant = safeExtGet('ffmpegKitPackage', 'https-gpl')
+    
+  // Match the exact AAR filename without extension
+  implementation(name: "ffmpeg-kit-${variant}-6.0-2", ext: 'aar')
 }
